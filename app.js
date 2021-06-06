@@ -1,21 +1,20 @@
-// Modules
+// Module Declarations
 const express = require("express");
 
-// Files
-// const
+// External Files
+const generator = require("./routes/generator");
 
-// Function / Object Declarations
+// Module Initializations
 const app = express();
-// const router = express.Router();
 
 // Configurable Settings
 const port = 3000;
 
+// App Initializations
+app.set("view engine", "ejs");
+app.use("/generator", generator);
 
-app.get("/", function(req, res, next) {
-  res.send("beat");
-});
-
+// Start server
 app.listen(port, () => {
   console.log("Listening on port " + port);
 });

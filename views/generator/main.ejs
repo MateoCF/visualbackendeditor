@@ -1,0 +1,68 @@
+bruh
+<script>
+    // slice used to evade WebStorm error of just a const f = ;
+    const f = {<%- JSON.stringify(features).slice(1,-1) %>};
+
+    // Options sent from server
+    const attributeDataTypes = f.attributeDataTypes;
+    const crudFilterOptions = {
+        "read": f.crudFilterOptions.read,
+        "create": f.crudFilterOptions.create,
+        "edit": f.crudFilterOptions.edit,
+        "destroy": f.crudFilterOptions.destroy
+    }
+    const crudStylingOptions = {
+        "read": f.crudStylingOptions.read,
+        "create": f.crudStylingOptions.create,
+        "edit": f.crudStylingOptions.edit,
+        "destroy": f.crudStylingOptions.destroy
+    }
+
+    // Data to send to server upon completion
+    let data = {
+        "users": {},
+        "models": {},
+        "pages": {}
+    }
+
+    // Object constructors to ease data object creation
+    function user(userType, username, customAttributes) {
+        this.userType = userType;
+        this.username = username;
+        this.customAttributes = customAttributes;
+    }
+
+    function userAttribute(attributeName, dataType) {
+        this.attributeName = attributeName;
+        this.dataType = dataType;
+    }
+
+    function model(modelName, userPrimary, modelPrimary, userForeign, modelForeign, customAttributes) {
+        this.modelName = modelName;
+        this.userPrimary = userPrimary;
+        this.modelPrimary = modelPrimary;
+        this.userForeign = userForeign;
+        this.modelForeign = modelForeign;
+        this.customAttributes = customAttributes;
+    }
+
+    function modelAttribute(attributeName, dataType) {
+        this.attributeName = attributeName;
+        this.dataType = dataType;
+    }
+
+    function page(title, path, accessibility, read, create, edit, destroy) {
+        this.title = title;
+        this.path = path;
+        this.accessibility = accessibility;
+        this.read = read;
+        this.create = create;
+        this.edit = edit;
+        this.destroy = destroy;
+    }
+
+    function CRUD(crudType, userType, filter, styling) {
+
+    }
+
+</script>

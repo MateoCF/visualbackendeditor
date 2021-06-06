@@ -1,7 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-var customModelSchema = new mongoose.Schema({
-
+const customModelSchema = new mongoose.Schema({
+    "modelName": String,
+    "userPrimary": [ mongoose.Schema.Types.ObjectId ],
+    "modelPrimary": [ mongoose.Schema.Types.ObjectId ],
+    "userForeign": [ mongoose.Schema.Types.ObjectId ],
+    "modelForeign": [ mongoose.Schema.Types.ObjectId ],
+    "customAttributes": {}
 });
 
-var CustomModel = mongoose.model('CustomModel', customModelSchema);
+const CustomModel = mongoose.model('CustomModel', customModelSchema);
+
+module.exports = { CustomModel };
