@@ -1,4 +1,4 @@
-# vbe
+# Virtual Backend Editor
 
 ## About
 This README is to outline and guide the development of EasyDev.
